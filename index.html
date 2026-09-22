@@ -989,16 +989,8 @@
       </div>
       <div class="path-card">
         <div class="path-tag alternative">BYO Agent</div>
-        <h4>🤖 Kiro (or any agent)</h4>
-        <p>Use Kiro IDE or Kiro Web as your coding agent. The demo app still runs in Codespace; Kiro connects to Bluebox from your machine. Any other agent works too.</p>
-      </div>
-    </div>
-
-    <div class="callout note">
-      <div class="callout-icon">ℹ️</div>
-      <div class="callout-body">
-        <div class="callout-label">Kiro licenses</div>
-        <p>If you want to try Kiro, our friends at AWS have provided some trial licenses. Ask your instructor for a code. Kiro IDE works on macOS, Windows, and Linux; Kiro Web runs in any browser. While these codes will work after the workshop, they must be claimed before Oct 1 and will expire on Nov 1.</p>
+        <h4>🤖 BYO Agent</h4>
+        <p>Use any coding agent — Kiro IDE, Kiro Web, Claude Code, Cursor, or anything else. The demo app still runs in Codespace; your agent connects to Bluebox from your machine.</p>
       </div>
     </div>
 
@@ -1099,9 +1091,7 @@
         <div class="tab-group">
           <div class="tab-bar">
             <button class="tab-btn active" onclick="switchTab(this,'tab-copilot')">GitHub Copilot</button>
-            <button class="tab-btn" onclick="switchTab(this,'tab-kiro-ide')">Kiro IDE</button>
-            <button class="tab-btn" onclick="switchTab(this,'tab-kiro-web')">Kiro Web</button>
-            <button class="tab-btn" onclick="switchTab(this,'tab-other')">Other Agent</button>
+            <button class="tab-btn" onclick="switchTab(this,'tab-other')">BYO Coding Agent</button>
           </div>
 
           <!-- COPILOT -->
@@ -1138,10 +1128,10 @@
             </ol>
             <img src="bluebox-setup-summary.png" alt="Bluebox setup summary showing GitHub connected, Copilot per-repo skills installed, and instrumentation skipped" style="width: 100%; max-width: 680px; border-radius: 8px; border: 1px solid var(--gray-mid); margin: 8px 0 16px;" />
             <ol class="steps-list" start="6">
-              <li>Verify GitHub Copilot is able to leverage Bluebox by asking in Copilot Chat:</li>
+              <li>Verify GitHub Copilot is able to leverage Bluebox by asking in Coding Agent Chat:</li>
             </ol>
             <div class="prompt-box">
-              <div class="prompt-label">Copilot Chat</div>
+              <div class="prompt-label">Coding Agent Chat</div>
               <p>What Bluebox skills are available?</p>
             </div>
             <div class="callout success">
@@ -1153,74 +1143,7 @@
             </div>
           </div>
 
-          <!-- KIRO IDE -->
-          <div class="tab-content" id="tab-kiro-ide">
-            <p>Kiro IDE is an agentic IDE that connects to Bluebox directly. Install it on your local machine, then open your forked repo.</p>
-            <ol class="steps-list">
-              <li>Download and install Kiro from <a href="https://kiro.dev" target="_blank">kiro.dev</a>. Use the trial license code from your instructor.</li>
-              <li>Open Kiro and clone your fork:
-                <div class="code-block" style="margin-top: 8px;">
-                  <div class="code-block-header">
-                    <span class="code-lang">bash</span>
-                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                  </div>
-                  <pre>git clone https://github.com/&lt;your-username&gt;/BlueboxWorkshopWeAreDevsSept2026</pre>
-                </div>
-              </li>
-              <li>In the Kiro terminal, install the Bluebox CLI:</li>
-            </ol>
-            <div class="code-block">
-              <div class="code-block-header">
-                <span class="code-lang">bash — macOS / Linux</span>
-                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-              </div>
-              <pre>curl -fsSL https://app.bluebox.ai/install.sh | bash</pre>
-            </div>
-            <ol class="steps-list" start="4">
-              <li>The installer runs <code>bluebox setup</code> automatically — it opens your browser for GitHub authentication, selects the workshop workspace, and installs skills into Kiro.</li>
-              <li>Verify in Kiro's Agent panel by asking:</li>
-            </ol>
-            <div class="prompt-box">
-              <div class="prompt-label">Kiro Agent panel</div>
-              <p>Using Bluebox, is the shop app connected and sending telemetry?</p>
-            </div>
-          </div>
-
-          <!-- KIRO WEB -->
-          <div class="tab-content" id="tab-kiro-web">
-            <p>Kiro Web runs in your browser — no local install. It needs a BLUEBOX_TOKEN secret and two steering files to connect to production data.</p>
-            <ol class="steps-list">
-              <li>Open <a href="https://kiro.dev" target="_blank">kiro.dev</a> and sign in with your GitHub account (use the trial license code from your instructor).</li>
-              <li>In Kiro Web Settings → <strong>Steering</strong>, add two custom steerings:</li>
-            </ol>
-
-            <p><strong>Steering 1 — "Download Bluebox CLI"</strong></p>
-            <div class="prompt-box">
-              <div class="prompt-label">Custom steering content</div>
-              <p>When the user asks a production question or asks you to fix a bug, first install the Bluebox CLI by downloading the correct binary for the detected OS/architecture from app.bluebox.ai/download/bluebox and authenticate it. Then use `bluebox ask` to query production data before touching code.</p>
-            </div>
-
-            <p><strong>Steering 2 — "Production Query with Bluebox CLI"</strong></p>
-            <div class="prompt-box">
-              <div class="prompt-label">Custom steering content</div>
-              <p>Always use `bluebox ask` to get production context before writing or reviewing code. Run: `bluebox ask "What are the current errors and performance issues?"` and write the output to a steering file in .kiro/steering/ before proceeding.</p>
-            </div>
-
-            <ol class="steps-list" start="3">
-              <li>In Bluebox Settings → <strong>CLI</strong>, click <strong>Create token</strong>, copy the token value.</li>
-              <li>In Kiro Web Settings → <strong>Secrets</strong>, add a secret named <code>BLUEBOX_TOKEN</code> with that value.</li>
-              <li>Verify by asking Kiro:</li>
-            </ol>
-            <div class="prompt-box">
-              <div class="prompt-label">Kiro Web</div>
-              <p>Using Bluebox, what services are connected to my workspace?</p>
-            </div>
-            <ol class="steps-list" start="6">
-              <li>Kiro may prompt you to install the Bluebox CLI after this first prompt. Follow the prompts to install it — this lets Kiro query live production data on your behalf.</li>
-            </ol>
-          </div>
-
-          <!-- OTHER AGENT -->
+          <!-- BYO CODING AGENT -->
           <div class="tab-content" id="tab-other">
             <p>Any coding agent that can run shell commands or call MCP tools can work with Bluebox. The key steps are:</p>
             <ol class="steps-list">
@@ -1228,13 +1151,6 @@
               <li>Run <code>bluebox setup</code> to authenticate and select the workshop workspace.</li>
               <li>The CLI installs Bluebox skills into any supported agent it detects. For unsupported agents, ask your agent to run <code>bluebox ask "your question"</code> to query production data directly.</li>
             </ol>
-            <div class="callout tip">
-              <div class="callout-icon">💡</div>
-              <div class="callout-body">
-                <div class="callout-label">The universal prompt</div>
-                <p>Prefix any question with <em>"Using Bluebox, …"</em> and your agent will know to call <code>bluebox ask</code> for live production context before responding.</p>
-              </div>
-            </div>
           </div>
         </div>
         <div class="callout tip" style="margin-top: 16px;">
@@ -1301,7 +1217,7 @@ make up</pre>
         <img src="app-running.png" alt="Codespace terminal showing all containers started and healthy after make up" style="width: 100%; max-width: 680px; border-radius: 8px; border: 1px solid var(--gray-mid); margin: 8px 0 16px;" />
         <ol class="steps-list" start="6">
           <li>Open the <strong>Ports</strong> panel in your Codespace.</li>
-          <li>Click <strong>Add Port</strong>, type <code>8080</code>.<br>Click the forwarded address for port <code>8088</code> to open the shop in your browser.</li>
+          <li>Click <strong>Add Port</strong>, type <code>8088</code>.<br>Click the forwarded address for port <code>8088</code> to open the shop in your browser.</li>
         </ol>
         <img src="ports-panel.png" alt="Codespace Ports panel showing port 8088 forwarded with Open in Browser option" style="width: 100%; max-width: 680px; border-radius: 8px; border: 1px solid var(--gray-mid); margin: 8px 0 12px;" />
         <p>You should see products listed on the homepage.</p>
@@ -1330,11 +1246,11 @@ make up</pre>
         </ol>
         <img src="bluebox-telemetry-flowing.png" alt="Bluebox fully set up with all steps complete and telemetry received" style="max-width:100%;border-radius:8px;border:1px solid #e5e7eb;margin:10px 0;">
         <ol class="steps-list" start="3">
-          <li>Ask your coding agent:</li>
+          <li>Open a new Bluebox chat (click <strong>+ New</strong> in the upper left of the Bluebox UI, then select <strong>Chat</strong>) and ask:</li>
         </ol>
         <div class="prompt-box">
-          <div class="prompt-label">Try in your coding agent</div>
-          <p>Ask Bluebox, what is the current response time for my shop service?</p>
+          <div class="prompt-label">Bluebox chat</div>
+          <p>What is the current response time for my shop service?</p>
         </div>
 
         <div class="checklist">
@@ -1344,7 +1260,7 @@ make up</pre>
           <div class="checklist-item"><div class="check-box"></div><span>Codespace running the workshop application</span></div>
           <div class="checklist-item"><div class="check-box"></div><span>OTel env vars set and app started with <code>make up</code></span></div>
           <div class="checklist-item"><div class="check-box"></div><span>Telemetry confirmed in Bluebox Setup page</span></div>
-          <div class="checklist-item"><div class="check-box"></div><span>Coding agent can query Bluebox production data</span></div>
+          <div class="checklist-item"><div class="check-box"></div><span>Confirmed telemetry via Bluebox Chat</span></div>
         </div>
       </div>
     </div>
@@ -1543,13 +1459,12 @@ make down &amp;&amp; make up</pre>
           <pre>make load</pre>
         </div>
         <ol class="steps-list" start="2">
-          <li>Check the Bluebox Overview page — the error rate on <code>shop</code> should drop to near zero.</li>
           <li>Browse the app in your browser and confirm products load normally.</li>
-          <li>Ask Bluebox directly:</li>
+          <li>In the Bluebox UI, verify the fix by asking the below question either in the bottom of the previous investigation or in a new chat:</li>
         </ol>
         <div class="prompt-box">
-          <div class="prompt-label">Validation prompt</div>
-          <p>Using Bluebox, is the shop API healthy now? Compare the error rate and latency before and after recent merge and app restart.</p>
+          <div class="prompt-label">Bluebox chat</div>
+          <p>Is the shop API healthy now? Compare the error rate and latency before and after recent merge and app restart.</p>
         </div>
       </div>
     </div>
