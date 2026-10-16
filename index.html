@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bluebox Workshop — WeAreDevelopers</title>
+<title>Bluebox Workshop</title>
 <style>
   :root {
     --blue: #1A56DB;
@@ -835,7 +835,7 @@
       <div class="logo-box">B</div>
       <span class="logo-text">Bluebox</span>
     </div>
-    <div class="sidebar-subtitle">WeAreDevelopers Workshop</div>
+    <div class="sidebar-subtitle">Bluebox Workshop</div>
   </div>
 
   <div class="nav-section">
@@ -855,7 +855,7 @@
     <div class="nav-label">Resources</div>
     <a href="#troubleshooting" class="nav-link">🔧 Troubleshooting</a>
     <a href="https://docs.bluebox.ai" class="nav-link" target="_blank">📖 Bluebox Docs</a>
-    <a href="https://github.com/JasonOstroski/BlueboxWorkshopWeAreDevsSept2026" class="nav-link" target="_blank">💻 Demo App Repo</a>
+    <a href="https://github.com/JasonOstroski/BlueboxWorkshop2026" class="nav-link" target="_blank">💻 Demo App Repo</a>
     <a href="https://bluebox.ai" class="nav-link" target="_blank">🌐 bluebox.ai</a>
   </div>
 </nav>
@@ -865,7 +865,7 @@
 
   <!-- ── HERO ─────────────────────────────── -->
   <div class="hero" id="overview">
-    <div class="hero-event-tag">⚡ WeAreDevelopers Workshop</div>
+    <div class="hero-event-tag">⚡ Bluebox Workshop</div>
     <h1>AI-Powered Dev &amp; SRE Workflows<br><span>with Bluebox</span></h1>
     <div class="hero-meta">
       <div class="hero-meta-item">⏱ <strong>90–120 minutes</strong></div>
@@ -990,7 +990,7 @@
       <div class="path-card">
         <div class="path-tag alternative">BYO Agent</div>
         <h4>🤖 BYO Agent</h4>
-        <p>Use any coding agent — Kiro IDE, Kiro Web, Claude Code, Cursor, or anything else. The demo app still runs in Codespace; your agent connects to Bluebox from your machine.</p>
+        <p>Use any coding agent — Kiro IDE, Kiro Web, Claude Code, Cursor, or anything else. The demo app still runs in Codespace; your agent connects to Bluebox from your machine. You'll choose <strong>BYO Coding Agent</strong> in Step 4.</p>
       </div>
     </div>
 
@@ -1032,7 +1032,7 @@
       </div>
       <div class="step-body">
         <ol class="steps-list">
-          <li>Go to <a href="https://github.com/JasonOstroski/BlueboxWorkshopWeAreDevsSept2026" target="_blank"><strong>github.com/JasonOstroski/BlueboxWorkshopWeAreDevsSept2026</strong></a> and fork it to your personal GitHub account.</li>
+          <li>Go to <a href="https://github.com/JasonOstroski/BlueboxWorkshop2026" target="_blank"><strong>github.com/JasonOstroski/BlueboxWorkshop2026</strong></a> and fork it to your personal GitHub account.</li>
         </ol>
         <img src="fork-repo.png" alt="GitHub repo page showing the Fork button and Create a new fork option" style="width: 100%; max-width: 680px; border-radius: 8px; border: 1px solid var(--gray-mid); margin: 12px 0 16px;" />
         <ol class="steps-list" start="2">
@@ -1063,14 +1063,14 @@
       <div class="step-body">
         <ol class="steps-list">
           <li>In Bluebox, go to <strong>Setup</strong> from the left sidebar.</li>
-          <li>Under <strong>Connect GitHub repositories</strong>, click <strong>Connect with GitHub</strong> and grant access to your <code>BlueboxWorkshopWeAreDevsSept2026</code> fork.</li>
+          <li>Under <strong>Connect GitHub repositories</strong>, click <strong>Connect with GitHub</strong> and grant access to your <code>BlueboxWorkshop2026</code> fork.</li>
         </ol>
         <img src="bluebox-setup.png" alt="Bluebox Setup page showing the Connect GitHub repositories step with Connect with GitHub button" style="width: 100%; max-width: 680px; border-radius: 8px; border: 1px solid var(--gray-mid); margin: 12px 0 4px;" />
         <div class="callout note">
           <div class="callout-icon">ℹ️</div>
           <div class="callout-body">
             <div class="callout-label">Bluebox GitHub App</div>
-            <p>You may be prompted to install and configure access for the Bluebox GitHub App. Follow the prompts to authorize it for your personal account and grant access to your <code>BlueboxWorkshopWeAreDevsSept2026</code> fork.</p>
+            <p>You may be prompted to install and configure access for the Bluebox GitHub App. Follow the prompts to authorize it for your personal account and grant access to your <code>BlueboxWorkshop2026</code> fork.</p>
           </div>
         </div>
       </div>
@@ -1116,6 +1116,15 @@
             </div>
             <ol class="steps-list" start="2">
               <li>Follow the prompts. It will ask you to open another browser window and paste a code from your terminal for authentication.</li>
+            </ol>
+            <div class="callout warning">
+              <div class="callout-icon">⚠️</div>
+              <div class="callout-body">
+                <div class="callout-label">Navigating the CLI setup</div>
+                <p>During the interactive setup: use <code>Space</code> to select or toggle an option, and <code>Enter</code> to confirm and move to the next step.</p>
+              </div>
+            </div>
+            <ol class="steps-list" start="3">
               <li>Continue following the installer to set up Bluebox with <strong>GitHub Copilot</strong>. Install skills <strong>per-repo</strong> — we're only using this Codespace for this app.</li>
             </ol>
             <img src="bluebox-coding-agent-skills.png" alt="Bluebox CLI setup showing coding agent and skills selection screen" style="width: 100%; max-width: 680px; border-radius: 8px; border: 1px solid var(--gray-mid); margin: 8px 0 16px;" />
@@ -1656,14 +1665,14 @@ For each bottleneck you find, suggest what would need to change to handle 100× 
     <div class="step">
       <div class="step-header">
         <div class="step-num">1</div>
-        <div class="step-title">Understand workspaces and create one for your app</div>
+        <div class="step-title">Connect your GitHub repository</div>
       </div>
       <div class="step-body">
-        <p>A <strong>workspace</strong> is your environment in Bluebox — it holds your GitHub repository connection, OTel telemetry, findings, and investigations. Each workspace connects to <strong>one repository</strong>, so if you have multiple apps to monitor, you'll create a separate workspace for each.</p>
-        <p>You already have a default workspace from when you signed up (it's named after your GitHub username). You can use that one for your app, or create a fresh one:</p>
+        <p>In your Bluebox workspace, go to <strong>Settings → Setup</strong>:</p>
         <ul class="steps-list">
-          <li>Open the workspace menu in the top-left of Bluebox</li>
-          <li>Select your existing personal workspace, or go to <strong>Settings → Add workspace</strong> to create a new one</li>
+          <li>Under GitHub, authorize Bluebox for the organization or account that owns your app's repo</li>
+          <li>Find and select your application's repository</li>
+          <li>Click <strong>Confirm 1 repo</strong></li>
         </ul>
       </div>
     </div>
@@ -1671,28 +1680,6 @@ For each bottleneck you find, suggest what would need to change to handle 100× 
     <div class="step">
       <div class="step-header">
         <div class="step-num">2</div>
-        <div class="step-title">Add your GitHub repository</div>
-      </div>
-      <div class="step-body">
-        <p>In your personal workspace, go to <strong>Settings → Setup</strong>:</p>
-        <ul class="steps-list">
-          <li>Under GitHub, authorize Bluebox for the organization or account that owns your app's repo</li>
-          <li>Find and select your application's repository</li>
-          <li>Click <strong>Confirm 1 repo</strong></li>
-        </ul>
-        <div class="callout note">
-          <div class="callout-icon">ℹ️</div>
-          <div class="callout-body">
-            <div class="callout-label">One repo per workspace</div>
-            <p>Bluebox monitors one repository per workspace. If you have multiple apps to monitor, create a separate workspace for each.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="step">
-      <div class="step-header">
-        <div class="step-num">3</div>
         <div class="step-title">Clone your repo in your coding agent and run Bluebox setup</div>
       </div>
       <div class="step-body">
@@ -1736,7 +1723,7 @@ For each bottleneck you find, suggest what would need to change to handle 100× 
             </div>
           </div>
         </div>
-        <p>When prompted during setup, select your <strong>personal workspace</strong>. Bluebox will confirm the connection and install its skills into your coding agent.</p>
+        <p>Bluebox will confirm the connection and install its skills into your coding agent.</p>
         <div class="callout tip">
           <div class="callout-icon">💡</div>
           <div class="callout-body">
@@ -1749,7 +1736,7 @@ For each bottleneck you find, suggest what would need to change to handle 100× 
 
     <div class="step">
       <div class="step-header">
-        <div class="step-num">4</div>
+        <div class="step-num">3</div>
         <div class="step-title">Instrument your app with OpenTelemetry</div>
       </div>
       <div class="step-body">
@@ -1776,7 +1763,7 @@ For each bottleneck you find, suggest what would need to change to handle 100× 
 
     <div class="step">
       <div class="step-header">
-        <div class="step-num">5</div>
+        <div class="step-num">4</div>
         <div class="step-title">Merge and redeploy your app</div>
       </div>
       <div class="step-body">
@@ -1794,7 +1781,7 @@ For each bottleneck you find, suggest what would need to change to handle 100× 
 
     <div class="step">
       <div class="step-header">
-        <div class="step-num">6</div>
+        <div class="step-num">5</div>
         <div class="step-title">Explore — your app, your way</div>
       </div>
       <div class="step-body">
@@ -1824,35 +1811,6 @@ For each bottleneck you find, suggest what would need to change to handle 100× 
     <p class="section-intro">Common issues and quick fixes. If you're stuck during the workshop, check here first before asking for help.</p>
 
     <h3 class="subsection">Workspace &amp; CLI</h3>
-
-    <div class="step">
-      <div class="step-header">
-        <div class="step-num" style="background: var(--gray-mid); color: var(--dark);">?</div>
-        <div class="step-title">Your coding agent is querying the wrong app's data</div>
-      </div>
-      <div class="step-body">
-        <p>If you have multiple workspaces in your Bluebox account (for example, a personal workspace and a workshop workspace), the CLI and your coding agent may be pointed at the wrong one. You can check which workspace is active and switch it:</p>
-        <div class="code-block">
-          <div class="code-block-header">
-            <span class="code-lang">bash</span>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-          </div>
-          <pre><span class="comment"># See all workspaces and which one is currently active</span>
-bluebox workspace list
-
-<span class="comment"># Switch to a different workspace by name</span>
-bluebox workspace switch</pre>
-        </div>
-        <p>You can also pass a workspace flag directly on a single query without switching permanently:</p>
-        <div class="code-block">
-          <div class="code-block-header">
-            <span class="code-lang">bash</span>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-          </div>
-          <pre>bluebox ask --workspace &lt;workspace-name&gt; "What services are connected?"</pre>
-        </div>
-      </div>
-    </div>
 
     <div class="step">
       <div class="step-header">
@@ -1921,8 +1879,8 @@ bluebox workspace switch</pre>
 
   <!-- ── FOOTER ─────────────────────────────── -->
   <div class="footer">
-    <p>Built with <a href="https://bluebox.ai" target="_blank">Bluebox</a> by Dynatrace · <a href="https://docs.bluebox.ai" target="_blank">Documentation</a> · <a href="https://github.com/JasonOstroski/BlueboxWorkshopWeAreDevsSept2026" target="_blank">Demo App Repo</a></p>
-    <p style="color: var(--gray-border)">WeAreDevelopers Workshop</p>
+    <p>Built with <a href="https://bluebox.ai" target="_blank">Bluebox</a> by Dynatrace · <a href="https://docs.bluebox.ai" target="_blank">Documentation</a> · <a href="https://github.com/JasonOstroski/BlueboxWorkshop2026" target="_blank">Demo App Repo</a></p>
+    <p style="color: var(--gray-border)">Bluebox Workshop</p>
   </div>
 
 </main>
